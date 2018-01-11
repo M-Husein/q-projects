@@ -3890,4 +3890,4 @@ Object.defineProperty(exports, '__esModule', { value: true });
 
 })));
 
-let ORIGIN = window.location.origin+'/';
+let ORIGIN = window.location.origin+'/q-projects/';
