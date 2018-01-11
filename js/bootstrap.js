@@ -3869,7 +3869,7 @@ var Tab = function ($$$1) {
   var minPatch = 1;
   var maxMajor = 4;
 
-  if (version[0] < ltMajor && version[1] < minMinor || version[0] === minMajor && version[1] === minMinor && version[2] < minPatch || version[0] >= maxMajor) {
+  if(version[0] < ltMajor && version[1] < minMinor || version[0] === minMajor && version[1] === minMinor && version[2] < minPatch || version[0] >= maxMajor) {
     throw new Error('Bootstrap\'s JavaScript requires at least jQuery v1.9.1 but less than v4.0.0');
   }
 })($);
@@ -3886,7 +3886,7 @@ exports.Scrollspy = ScrollSpy;
 exports.Tab = Tab;
 exports.Tooltip = Tooltip;
 
-Object.defineProperty(exports, '__esModule', { value: true });
+Object.defineProperty(exports,'__esModule',{value:true});
 
 })));
 
