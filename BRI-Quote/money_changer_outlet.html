@@ -42,7 +42,8 @@
 		justify-content:flex-start;
 	}
 	#dropConfirmLocation *{
-		margin-top:18vh;
+		/* margin-top:18vh; */
+		z-index:1043;
 	}
 	.vmin35{
 		font-size:3.5vmin;	
@@ -293,11 +294,11 @@ function startNearbyRs(){
     	$('<div class="modal-backdrop dropConfirm show" id="dropConfirmLocation"><h3>Please, Allow Your Location to use this feature</h3></div>').appendTo("body");
   	},150);
 
-    var ww = $(window).width();
-    // console.log(ww);
-    if(ww <= 767){
-    	detectBrowser();
-    }	
+//     var ww = $(window).width();
+//     // console.log(ww);
+//     if(ww <= 767){
+//     	detectBrowser();
+//     }	
 		
     function geoSukses(posisi){
     	$("#dropConfirmLocation").remove();
@@ -403,27 +404,27 @@ function getDistanceInMeter(point_a,point_b){
   return distance_in_meters; //* 0.000621371; // convert meters to miles
 }
 	
-function detectBrowser(){
-  var userAgent = navigator.userAgent.toLowerCase();
-  if(/edge/i.test(userAgent)){
-    return "edge"; // edge
-  }else if(/rv:11/i.test(userAgent)){
-    return "ie11"; // ie11
-  }else if(/msie 10/i.test(userAgent)){
-    return "ie10"; // ie10
-  }else if(/opr/i.test(userAgent)){
-    return "opera"; // opera
-  }else if(/chrome/i.test(userAgent)){
-    //return "chrome"; // chrome
-    $("#dropConfirmLocation").css("justify-content","flex-end");
-		$("#dropConfirmLocation *").css("margin-top","0");
-  }else if(/firefox/i.test(userAgent)){
-    return "firefox"; // firefox
-  }else if(!!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/)){
-    return "safari"; // safari
-  }
-  return undefined;
-}
+// function detectBrowser(){
+//   var userAgent = navigator.userAgent.toLowerCase();
+//   if(/edge/i.test(userAgent)){
+//     return "edge"; // edge
+//   }else if(/rv:11/i.test(userAgent)){
+//     return "ie11"; // ie11
+//   }else if(/msie 10/i.test(userAgent)){
+//     return "ie10"; // ie10
+//   }else if(/opr/i.test(userAgent)){
+//     return "opera"; // opera
+//   }else if(/chrome/i.test(userAgent)){
+//     //return "chrome"; // chrome
+//     $("#dropConfirmLocation").css("justify-content","flex-end");
+// 		$("#dropConfirmLocation *").css("margin-top","0");
+//   }else if(/firefox/i.test(userAgent)){
+//     return "firefox"; // firefox
+//   }else if(!!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/)){
+//     return "safari"; // safari
+//   }
+//   return undefined;
+// }
 
 $(function(){
 
