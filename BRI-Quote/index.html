@@ -1,24 +1,44 @@
 <!DOCTYPE html>
 <html>
 <head>
-<base href="https://m-husein.github.io/q-projects/">
+<base href="http://localhost/q-projects/">
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="description" content="BRI Quote Demo Web Application Develop By Muhamad Husein aka Q-think">
 <meta name="author" content="Muhamad Husein, Q-think">
 <meta name="theme-color" content="#020f37">
-<link rel="icon" href="https://m-husein.github.io/q-projects/favicon.ico">
+<link rel="icon" href="favicon.ico">
 <title>BRI Quote</title>
-<link rel="stylesheet" href="https://m-husein.github.io/q-projects/css/bootstrap.css">
-<link rel="stylesheet" href="https://m-husein.github.io/q-projects/css/fa.css">
-<link rel="stylesheet" href="https://m-husein.github.io/q-projects/css/Q.css">
+<link rel="stylesheet" href="css/bootstrap.css">
+<link rel="stylesheet" href="css/fa.css">
+<link rel="stylesheet" href="css/Q.css">
+<style>
+@media(max-width:767px){
+	.w30p{
+		width:100%;
+  	padding:0 9px;
+	}
+}
+#btnShowPassword{
+	position:absolute;
+	top:0;
+	right:0;
+	z-index:4;
+}
+.fix-btm20{
+	position:fixed;
+  bottom:20px;
+  left:0;
+  right:0;
+}
+</style>
 </head>
 <body class="flx-body" id="Login">
 
 <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-bri" id="navMain">
   <div class="container">
-	  <a class="navbar-brand" href="https://m-husein.github.io/q-projects/BRI-Quote/index.html">
-	  	<img src="https://m-husein.github.io/q-projects/img/BRI_Quote_Logo.png" width="100" height="40" class="d-inline-block align-top" alt="BRI Quote">
+	  <a class="BRI-Quote/index.html">
+	  	<img src="img/BRI_Quote_Logo.png" width="100" height="40" class="d-inline-block align-top" alt="BRI Quote">
 	</a>
 	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navTop" aria-controls="navTop" aria-expanded="false" aria-label="Toggle navigation">
 	    <span class="navbar-toggler-icon"></span>
@@ -42,27 +62,51 @@
 <div class="container align-items-center center-mid">
 	<form class="w30p">
 		<div class="text-center mb-3">
-			<img src="https://m-husein.github.io/q-projects/img/BRI_Quote_icon.png" alt="BRI Quote">
+			<img src="img/BRI_Quote_icon.png" width="140" alt="BRI Quote">
 		</div>
-		<div class="input-group input-group-lg mb-3">
+		<div class="input-group input-group-lg flex-row-reverse mb-3">
+		  <input type="text" class="form-control input-trans" id="Email" placeholder="Email">
 		  <div class="input-group-prepend">
-		    <label class="btn btn-outline-secondary" for="Email"><i class="fa fa-user"></i></label>
+		    <label class="btn btn-outline-secondary pl-0 btn-trans" for="Email"><i class="fa fa-user-circle"></i></label>
 		  </div>
-		  <input type="text" class="form-control" id="Email" placeholder="Email address">
 		</div>
-		<div class="input-group input-group-lg mb-3">
+		<div class="input-group input-group-lg flex-row-reverse mb-3">
+      <button class="btn btn-outline-secondary btn-trans" type="button" id="btnShowPassword" title="Show Password">
+      	<i class="fa fa-eye"></i>
+      </button>
+		  <input type="password" class="form-control input-trans" id="Password" placeholder="Password">
 		  <div class="input-group-prepend">
-		    <label class="btn btn-outline-secondary" for="Password"><i class="fa fa-lock"></i></label>
+		    <label class="btn btn-outline-secondary pl-0 btn-trans" for="Password"><i class="fa fa-lock"></i></label>
 		  </div>
-		  <input type="password" class="form-control" id="Password" placeholder="Password">
 		</div>
-	  <div class="text-right"><a href="https://m-husein.github.io/q-projects/BRI-Quote/beranda.html" class="btn btn-warning">LOGIN</a></div>
+	  <p class="text-right"><a href="BRI-Quote/beranda.html" class="btn btn-warning">LOGIN</a></p>
+	  <div class="text-center fix-btm20">
+	  	<a href="#" class="link-abu"><i class="fa fa-info-circle"></i> Forgot Email or Password</a>
+	  </div>
 	</form>
 </div>
 
-<script src="https://m-husein.github.io/q-projects/js/jquery-2.1.4.min.js"></script>
-<script src="https://m-husein.github.io/q-projects/js/popper.min.js"></script>
-<script src="https://m-husein.github.io/q-projects/js/bootstrap.js"></script>
-<script src="https://m-husein.github.io/q-projects/js/Q.js"></script>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="js/popper.min.js"></script>
+<script src="js/bootstrap.js"></script>
+<script src="js/Q.js"></script>
+<script>
+$(function(){
+	$("#btnShowPassword").on("click",function(){
+		var pass = $("input#Password"),
+				t = $(this);
+		if(pass.attr("type") == "password"){
+			$("input#Password").attr("type","text").focus();
+			t.find("i").toggleClass("fa-eye fa-eye-slash");
+			t.attr("title","Hide Password");
+		}else{
+			$("input#Password").attr("type","password").focus();
+			t.find("i").toggleClass("fa-eye-slash fa-eye");
+			t.attr("title","Show Password");
+		}
 
+		
+	});
+});
+</script>
 </body></html>
