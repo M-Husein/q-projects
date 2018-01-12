@@ -3858,7 +3858,7 @@ var Tab = function ($$$1) {
  */
 
 (function ($$$1) {
-  if (typeof $$$1 === 'undefined') {
+  if (typeof $$$1 === 'undefined'){
     throw new Error('Bootstrap\'s JavaScript requires jQuery. jQuery must be included before Bootstrap\'s JavaScript.');
   }
 
