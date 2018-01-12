@@ -322,20 +322,20 @@ function startNearbyRs(){
             animation:google.maps.Animation.DROP
           });
           map.setCenter(pos);
-				  var infow = new google.maps.InfoWindow({
-				    maxWidth:200
-				  });
+					var infow = new google.maps.InfoWindow({
+						maxWidth:200
+					});
 
-			    google.maps.event.addListener(marker,'click',(function(marker,i){
-			    	var isi = '<p class=font-weight-bold>'+cabangBRI[i].cabang+'</p><address>'+cabangBRI[i].alamat+'</address>';
-			      return function(){
-			        infow.setContent(isi);
-			        infow.open(map,marker);
-			      }
-			    })(marker,i));
-      	}//END if getDistanceInMeter
-      }//END for loop
-    });
+					google.maps.event.addListener(marker,'click',(function(marker,i){
+						var isi = '<p class=font-weight-bold>'+cabangBRI[i].cabang+'</p><address>'+cabangBRI[i].alamat+'</address>';
+						return function(){
+							infow.setContent(isi);
+							infow.open(map,marker);
+						}
+					})(marker,i));
+				}//END if getDistanceInMeter
+			}//END for loop
+		});
 
 		// TRY CUSTOM marker
 		const markerlayer = new google.maps.OverlayView();
@@ -344,7 +344,7 @@ function startNearbyRs(){
 		};
 		markerlayer.setMap(map);
 
-		$('<div class=modal-backdrop fade show></div>').appendTo("body");
+		$('<div class="modal-backdrop fade show"></div>').appendTo("body");
 		
   }//END navigator geolocation
 }//END startNearbyRs
