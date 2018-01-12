@@ -283,17 +283,21 @@ function setMapOnAll(map){
 // Search Cabang Terdekat Dr Lokasi User
 function startNearbyRs(){
   if(navigator.geolocation){
-    setMapOnAll(null);
-
-    $('<div class="modal-backdrop dropConfirm show" id="dropConfirmLocation"><h3>Please, Allow Your Location to use this feature</h3></div>').appendTo("body");
+  	var showConfirmLokasi = setTimeout(function(){
+    	$('<div class="modal-backdrop dropConfirm show" id="dropConfirmLocation"><h3>Please, Allow Your Location to use this feature</h3></div>').appendTo("body");
+  	},150);
 
     var ww = $(window).width();
     // console.log(ww);
     if(ww <= 767){
     	detectBrowser();
-    }		
+    }	
 		
     function geoSukses(posisi){
+    	$("#dropConfirmLocation").remove();
+    	clearTimeout(showConfirmLokasi);
+    	setMapOnAll(null);			
+			
       var pos = {
         lat:posisi.coords.latitude,
         lng:posisi.coords.longitude
@@ -365,6 +369,7 @@ function startNearbyRs(){
     function geoError(err){
     	swal(errorCode[err.code],err.message);
     	$("#dropConfirmLocation").remove();
+			// console.log("errorCode[err.code]: "+errorCode[err.code]+", err.message: "+err.message);
     }//END geoError()
 
 	  var errorCode = { 
