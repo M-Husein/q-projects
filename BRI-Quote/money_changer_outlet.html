@@ -375,6 +375,7 @@ function startNearbyRs(){
     function geoError(err){
     	swal(errorCode[err.code],err.message);
     	$("#dropConfirmLocation").remove();
+			clearTimeout(showConfirmLokasi);
 			// console.log("errorCode[err.code]: "+errorCode[err.code]+", err.message: "+err.message);
     }//END geoError()
 
