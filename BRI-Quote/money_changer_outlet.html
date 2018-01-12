@@ -339,7 +339,7 @@ function startNearbyRs(){
 
 		// TRY CUSTOM marker
 		const markerlayer = new google.maps.OverlayView();
-		markerlayer.draw = function () {
+		markerlayer.draw = function(){
 				this.getPanes().markerLayer.classList.add('mark-layer');
 		};
 		markerlayer.setMap(map);
