@@ -406,7 +406,7 @@ function detectBrowser(){
   }else if(/chrome/i.test(userAgent)){
     //return "chrome"; // chrome
     $("#dropConfirmLocation").css("justify-content","flex-end");
-
+		$("#dropConfirmLocation *").css("margin-top","0");
   }else if(/firefox/i.test(userAgent)){
     return "firefox"; // firefox
   }else if(!!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/)){
