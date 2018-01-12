@@ -337,13 +337,15 @@ function startNearbyRs(){
       }//END for loop
     });
 
-// TRY CUSTOM marker
-const markerlayer = new google.maps.OverlayView();
-markerlayer.draw = function () {
-    this.getPanes().markerLayer.classList.add('mark-layer');
-};
-markerlayer.setMap(map);
+		// TRY CUSTOM marker
+		const markerlayer = new google.maps.OverlayView();
+		markerlayer.draw = function () {
+				this.getPanes().markerLayer.classList.add('mark-layer');
+		};
+		markerlayer.setMap(map);
 
+		$('<div class=modal-backdrop fade show></div>').appendTo("body");
+		
   }//END navigator geolocation
 }//END startNearbyRs
 
