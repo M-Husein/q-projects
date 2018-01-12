@@ -217,7 +217,6 @@
 <script src="js/sweetalert.min.js"></script>
 <script src="js/Q.js"></script>
 <script>
-// var markers = [],map;
 var map,allCabang = [],cabangMark;
 var markerBRI = {
   url:ORIGIN+'img/bank_bri.png'
@@ -280,20 +279,17 @@ function startNearbyRs(){
   if(navigator.geolocation){
     setMapOnAll(null);
 
-    navigator.geolocation.getCurrentPosition(function(posisi){
-      var pos = {
-        lat:posisi.coords.latitude,lng:posisi.coords.longitude
-      };
+    $('<div class="modal-backdrop dropConfirm show" id="dropConfirmLocation"><h2>Please, Allow Your Location to use this feature</h2></div>').appendTo("body");
 
-     	cabangMark = new google.maps.Marker({
+    function geoSukses(posisi){
+      var pos = {
+        lat:posisi.coords.latitude,
+        lng:posisi.coords.longitude
+      };
+     	userMark = new google.maps.Marker({
         position:new google.maps.LatLng(pos.lat,pos.lng),
         map:map,
         id:'user',
-        //icon:markerBRI,
-		    // icon:{
-		    //   path:google.maps.SymbolPath.CIRCLE,
-		    //   scale:7
-		    // },
 		    flat:!0,
 		    icon:{
           path:google.maps.SymbolPath.CIRCLE,
@@ -309,6 +305,18 @@ function startNearbyRs(){
         animation:google.maps.Animation.DROP
       });
 
+      $("#dropConfirmLocation").remove();
+
+			// TRY CUSTOM marker
+			const markerlayer = new google.maps.OverlayView();
+			markerlayer.draw = function(){
+			  this.getPanes().markerLayer.classList.add('mark-layer');
+			};
+			markerlayer.setMap(map);
+
+     	map.setZoom(12);
+      map.setCenter(pos);
+
       for(var i=0; i < cabangBRI.length; i++){
       	var getpos = new google.maps.LatLng(pos.lat,pos.lng), // User Position
       			getBRI = new google.maps.LatLng(cabangBRI[i].lat,cabangBRI[i].lng);
@@ -321,32 +329,50 @@ function startNearbyRs(){
             title:cabangBRI[i].cabang,
             animation:google.maps.Animation.DROP
           });
-          map.setCenter(pos);
-					var infow = new google.maps.InfoWindow({
-						maxWidth:200
-					});
 
-					google.maps.event.addListener(marker,'click',(function(marker,i){
-						var isi = '<p class=font-weight-bold>'+cabangBRI[i].cabang+'</p><address>'+cabangBRI[i].alamat+'</address>';
-						return function(){
-							infow.setContent(isi);
-							infow.open(map,marker);
-						}
-					})(marker,i));
-				}//END if getDistanceInMeter
-			}//END for loop
-		});
+				  var infow = new google.maps.InfoWindow({
+				    maxWidth:200
+				  });
 
-		// TRY CUSTOM marker
-		const markerlayer = new google.maps.OverlayView();
-		markerlayer.draw = function(){
-				this.getPanes().markerLayer.classList.add('mark-layer');
+			    google.maps.event.addListener(marker,'click',(function(marker,i){
+			    	var isi = '<p class="font-weight-bold">'+cabangBRI[i].cabang+'</p><address>'+cabangBRI[i].alamat+'</address>';
+			      return function(){
+			        infow.setContent(isi);
+			        infow.open(map,marker);
+			      }
+			    })(marker,i));
+      	}
+      	//else{
+      		//swal("Maaf","Tidak ada cabang BRI terdekat dari lokasi Anda.");
+      		//$("#dropConfirmLocation").remove();
+      	//}//END if getDistanceInMeter
+
+      }//END for loop
+    }//END geoSukses()
+
+    function geoError(err){
+    	swal(errorCode[err.code],err.message);
+    	$("#dropConfirmLocation").remove();
+    }//END geoError()
+
+	  var errorCode = { 
+	  	0:"unknown error",
+	    1:"Permission denied",
+	    2:"Position unavailable",
+	    3:"Request timeout"
+	  };
+
+		var geoOptions = {
+		  enableHighAccuracy:true 
+		  // maximumAge:30000,
+		  // timeout:27000 // 10 * 1000
 		};
-		markerlayer.setMap(map);
 
-		//$('<div class="modal-backdrop fade show"></div>').appendTo("body");
-		
-  }//END navigator geolocation
+    navigator.geolocation.getCurrentPosition(geoSukses,geoError,geoOptions);
+  }
+  else{
+  	swal("Info","Your Device Not Support Geolocation Services");
+  } //END if navigator geolocations
 }//END startNearbyRs
 
 // Distance in meter
