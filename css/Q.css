@@ -1,0 +1,240 @@
+body#Login{
+	background-color:#020f37;
+}
+.flx-body{
+	display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  -ms-flex-wrap:wrap;
+  flex-wrap:wrap;
+  flex-direction:column;
+  /*justify-content:center;*/
+  min-height:100vh;
+}
+.center-mid{
+	display:-webkit-box;
+  display:-ms-flexbox;
+  display:flex;
+  justify-content:center;
+  flex:1;
+}
+.bg-bri{
+	background:#254689;
+}
+.bg-custom{
+	background:#eeece1 !important;
+}
+label.btn{
+	margin-bottom:0;
+}
+[role="button"]{
+	cursor:pointer;
+}
+a.link-abu{
+	color:#868e96;
+}
+a.link-abu:hover{
+	color:#fff;
+}
+.txt-oren{
+	color:#fd6a05 !important;
+}
+*.btn:not(.btn-link){
+	font-weight:700;
+}
+.btn.btn-trans{
+	border-color:transparent !important;
+  border-radius:0 !important;
+  background:transparent !important;
+	box-shadow:none !important;
+}
+input.input-trans{
+	border-color:transparent;
+  border-bottom-color:#aaa;
+  border-radius:0 !important;
+  background:transparent !important;
+  color:#fff !important;
+  box-shadow:none !important;
+  padding-left:0.5rem !important;
+}
+input.input-trans:focus{
+	border-color:transparent;
+	border-bottom-color:#80bdff; /*  */
+}
+input.input-trans:focus + div .btn{
+	color:#fff;
+}
+
+#Gmap{
+	height:100%;
+}
+.gm-style-iw address{
+	margin:0;
+}
+
+div.dropWhite.show{
+	background-color:rgba(255,255,255,.65);
+}
+div.dropConfirm.show{
+	background-color:rgba(0,0,0,.7);
+}
+div.dropWhite.show,
+div.dropConfirm.show{
+	opacity:1;
+	display:-ms-flexbox;
+	display:-webkit-flex;
+	display:flex;
+  flex-flow:column;
+  align-items:center;
+  justify-content:center;
+}
+.dropConfirm *{
+	color:#fff;
+	text-align:center;
+}
+
+@-webkit-keyframes pulse-animation{
+  0%{
+    opacity:1;
+    -webkit-transform:scale(1);
+    transform:scale(1);
+  }
+  50%{
+    opacity:0;
+    -webkit-transform:scale(1.5);
+    transform:scale(1.5);
+  }
+  100%{
+    opacity:0;
+    -webkit-transform:scale(1.5);
+    transform:scale(1.5);
+  }
+}
+@keyframes pulse-animation{
+  0%{
+    opacity:1;
+    -webkit-transform:scale(1);
+    transform:scale(1);
+  }
+  50%{
+    opacity:0;
+    -webkit-transform:scale(1.5);
+    transform:scale(1.5);
+  }
+  100%{
+    opacity:0;
+    -webkit-transform:scale(1.5);
+    transform:scale(1.5);
+  }
+}
+
+@media(min-width:768px){
+	.w30p{
+		width:30%;
+	}
+	.w40p{
+		width:40%;
+	}
+	.w50p{
+		width:50%;
+	}
+	.w60p{
+		width:60%;
+	}
+
+}
+
+@media(max-width:767px){
+	.navbar#navMain{
+		z-index:1042;
+	}
+	#navTop.navbar-collapse{
+		display:-ms-flexbox !important;
+		display:-webkit-flex !important;
+		display:flex !important;
+		flex-flow:column;
+		width:80%;
+		height:100%;
+		position:fixed;
+		top:56px; /* 66px */
+		right:-100%;
+		background:#eee;
+		color:#333;
+		z-index:1041;
+		padding:5px 0 5px 15px;
+		box-shadow:0 2px 0.5cm rgba(0,0,0,0.5);
+		transition:all ease-in-out .25s;
+	}
+	#navTop.navbar-collapse.show{
+		right:0;
+	}
+	#navTop .navbar-nav,
+	#nav2 .navbar-nav{
+		width:100%;
+	}
+	#navTop .navbar-nav .nav-link{
+		color:#343a40;
+	}
+	button.navbar-toggler{
+		padding:0 0.25rem;
+		
+	}
+	.navbar-dark .navbar-toggler{
+		border-color:#fff !important;
+	}
+	.navbar-light .navbar-toggler{
+		border-color:rgba(0,0,0,0.4) !important;
+	}
+	
+	/* Nav Top 2 */
+	.navbar#navMore{
+		z-index:1041;
+	}
+	#nav2.navbar-collapse{
+		display:-ms-flexbox !important;
+		display:-webkit-flex !important;
+		display:flex !important;
+		flex-flow:column;
+		position:fixed;
+		top:57px;
+		left:-100%;
+		width:70%;
+		height:100%;
+		padding:5px 15px 5px 20px;
+		background:#eeece1;
+		z-index:1041;
+		/*padding:0 15px;*/
+		box-shadow:0 0 0.5cm rgba(0,0,0,0.5);
+		transition:all ease-in-out .25s;
+	}
+	#nav2.navbar-collapse.show{
+		left:0;
+	}
+	
+  .flex-xs-row{
+    -webkit-box-orient:horizontal !important;
+    -webkit-box-direction:normal !important;
+    -ms-flex-direction:row !important;
+    flex-direction:row !important;
+  }
+  .flex-xs-column{
+    -webkit-box-orient:vertical !important;
+    -webkit-box-direction:normal !important;
+    -ms-flex-direction:column !important;
+    flex-direction:column !important;
+  }
+	.flex-xs-col-rev{
+    -webkit-box-orient:vertical !important;
+    -webkit-box-direction:normal !important;
+    -ms-flex-direction:column-reverse !important;
+    flex-direction:column-reverse !important;
+  }
+	.flex-1-xs{
+		flex:1;
+	}
+	div.map-wrap,
+	.map-wrap .row > div{
+		padding:0 !important;
+	}
+	
+}
