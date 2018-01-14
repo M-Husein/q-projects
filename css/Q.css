@@ -8,7 +8,6 @@ body#Login{
   -ms-flex-wrap:wrap;
   flex-wrap:wrap;
   flex-direction:column;
-  /*justify-content:center;*/
   min-height:100vh;
 }
 .center-mid{
