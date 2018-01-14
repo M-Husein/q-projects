@@ -3389,13 +3389,29 @@ tbody.collapse.show{
   border-top-right-radius:0;
   border-bottom-right-radius:0;
 }
-
 .input-group .form-control:not(:first-child),
 .input-group .custom-select:not(:first-child){
   border-top-left-radius:0;
   border-bottom-left-radius:0;
 }
-
+.input-group-btn > .btn{
+  position:relative;
+}
+.input-group-btn:not(:first-child)>.btn-group:first-child,
+.input-group-btn:not(:first-child)>.btn:first-child{
+	z-index:2;
+  margin-left:-1px;
+}
+.input-group .form-control:not(:first-child),
+.input-group-addon:not(:first-child),
+.input-group-btn:not(:first-child)>.btn,
+.input-group-btn:not(:first-child)>.btn-group>.btn,
+.input-group-btn:not(:first-child)>.dropdown-toggle,
+.input-group-btn:not(:last-child)>.btn-group:not(:first-child)>.btn,
+.input-group-btn:not(:last-child)>.btn:not(:first-child){
+  border-top-left-radius:0;
+  border-bottom-left-radius:0;
+}
 .input-group .custom-file{
   display:-webkit-box;
   display:-ms-flexbox;
@@ -3404,13 +3420,11 @@ tbody.collapse.show{
   -ms-flex-align:center;
   align-items:center;
 }
-
 .input-group .custom-file:not(:last-child) .custom-file-control,
 .input-group .custom-file:not(:last-child) .custom-file-control::before{
   border-top-right-radius:0;
   border-bottom-right-radius:0;
 }
-
 .input-group .custom-file:not(:first-child) .custom-file-control,
 .input-group .custom-file:not(:first-child) .custom-file-control::before{
   border-top-left-radius:0;
