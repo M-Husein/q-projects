@@ -8,6 +8,7 @@ body#Login{
   -ms-flex-wrap:wrap;
   flex-wrap:wrap;
   flex-direction:column;
+  /*justify-content:center;*/
   min-height:100vh;
 }
 .center-mid{
@@ -140,10 +141,12 @@ div.dropConfirm.show{
 	.w60p{
 		width:60%;
 	}
-
 }
 
 @media(max-width:767px){
+	.w100m{
+		width:100%;
+	}
 	.navbar#navMain{
 		z-index:1042;
 	}
