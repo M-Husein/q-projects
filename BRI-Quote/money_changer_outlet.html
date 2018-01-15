@@ -6,8 +6,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1,  maximum-scale=1, user-scalable=no, shrink-to-fit=no">
 <meta name="description" content="BRI Quote Demo Web Application Develop By Muhamad Husein aka Q-think">
 <meta name="author" content="Muhamad Husein, Q-think">
-<meta name="theme-color" content="#020f37">
-<link rel="icon" href="favicon.ico">
+<meta name="theme-color" content="#254689">
+<link rel="icon" href="BRI-Quote/favicon.ico">
 <title>Money Changer Outlet</title>
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/fa.css">
@@ -40,11 +40,10 @@
 	}
 	#dropConfirmLocation{
 		justify-content:flex-start;
-		z-index:1043;
 	}
-/* 	#dropConfirmLocation *{
+	#dropConfirmLocation *{
 		margin-top:18vh;
-	} */
+	}
 	.vmin35{
 		font-size:3.5vmin;	
 	}
@@ -152,46 +151,49 @@
 
 <nav class="navbar navbar-expand-lg sticky-top navbar-dark bg-bri" id="navMain">
   <div class="container">
-	  <a href="BRI-Quote/index.html"><!--  class="navbar-brand" -->
-	  	<img src="img/BRI_Quote_Logo.png" width="100" height="40" class="d-inline-block align-top" alt="BRI Quote">
-		</a>
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navTop" aria-controls="navTop" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-	  <div class="collapse navbar-collapse" id="navTop">
-	    <ul class="navbar-nav">
-	      <li class="nav-item"><!-- active -->
-	        <a class="nav-link px-3" href="BRI-Quote/beranda.html">Beranda</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link px-3" href="#">Pesan Masuk</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link px-3" href="#">Bantuan</a>
-	      </li>
-	      <li class="nav-item">
-	        <a class="nav-link px-3" href="BRI-Quote/index.html">Logout</a>
-	      </li>
-	    </ul>
-	  </div>
-	</div>
+    <a href="BRI-Quote/index.html"><!--  class="navbar-brand" -->
+      <img src="img/BRI_Quote_Logo.png" width="100" height="40" class="d-inline-block align-top" alt="BRI Quote">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navTop" aria-controls="navTop" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navTop">
+      <ul class="navbar-nav">
+        <li class="nav-item"><!-- active -->
+          <a class="nav-link px-3" href="BRI-Quote/home.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3" href="#">Help</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link px-3" href="BRI-Quote/index.html">Logout</a>
+        </li>
+      </ul>
+    </div>
+  </div>
 </nav>
 
 <nav class="navbar navbar-expand-lg navbar-light bg-custom" id="navMore">
-	<div class="container">
-	  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav2" aria-controls="nav2" aria-expanded="false" aria-label="Toggle navigation">
-	    <span class="navbar-toggler-icon"></span>
-	  </button>
-	  <div class="collapse navbar-collapse justify-content-start" id="nav2">
-	    <div class="navbar-nav">
-	      <a class="nav-item nav-link text-dark mr-4" href="#">Information</a>
-	      <a class="nav-item nav-link text-dark mr-4" href="#modalCheckBN" data-toggle="modal">Quotation Services</a>
-	      <a class="nav-item nav-link text-dark mr-4" href="#modalConvertRate" data-toggle="modal">Converter rate</a>
-	      <a class="nav-item nav-link text-dark mr-4" href="BRI-Quote/kurs_counter.html">Kurs Counter</a>
-	      <a class="nav-item nav-link text-dark mr-4" href="BRI-Quote/money_changer_outlet.html">Money Changer Outlet</a>
-	    </div>
-	  </div>
-	</div>
+  <div class="container">
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav2" aria-controls="nav2" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse justify-content-start" id="nav2">
+      <div class="navbar-nav">
+        <span class="nav-item dropdown">
+          <span class="btn btn-link text-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            Information
+          </span>
+          <div class="dropdown-menu">
+            <a class="dropdown-item" href="BRI-Quote/counter_rate.html">Counter Rate</a>
+            <a class="dropdown-item" href="BRI-Quote/money_changer_outlet.html">Money Changer Outlet</a>
+          </div>
+        </span>
+        <a class="nav-item nav-link text-dark mr-4" href="BRI-Quote/quotation_services.html">Quotation Services</a>
+        <a class="nav-item nav-link text-dark mr-4" href="#modalConvertRate" data-toggle="modal">Converter rate</a>
+      </div>
+    </div>
+  </div>
 </nav>
 
 <div class="container py-4 center-mid map-wrap">
@@ -230,7 +232,7 @@
 <script src="js/sweetalert.min.js"></script>
 <script src="js/Q.js"></script>
 <script>
-var map,allCabang = [],cabangMark;
+var map,allCabang = [],userMark;
 var markerBRI = {
   url:ORIGIN+'img/bank_bri.png'
 };
@@ -290,21 +292,21 @@ function setMapOnAll(map){
 // Search Cabang Terdekat Dr Lokasi User
 function startNearbyRs(){
   if(navigator.geolocation){
+  	var ww = $(window).width();
   	var showConfirmLokasi = setTimeout(function(){
     	$('<div class="modal-backdrop dropConfirm show" id="dropConfirmLocation"><h3>Please, Allow Your Location to use this feature</h3></div>').appendTo("body");
-  	},100);
+  	},150);
 
-//     var ww = $(window).width();
-//     // console.log(ww);
-//     if(ww <= 767){
-//     	detectBrowser();
-//     }	
-		
+    console.log(ww);
+    if(ww <= 767){
+    	detectBrowser();
+    }
+
     function geoSukses(posisi){
     	$("#dropConfirmLocation").remove();
     	clearTimeout(showConfirmLokasi);
-    	setMapOnAll(null);			
-			
+    	setMapOnAll(null);
+
       var pos = {
         lat:posisi.coords.latitude,
         lng:posisi.coords.longitude
@@ -328,7 +330,7 @@ function startNearbyRs(){
         animation:google.maps.Animation.DROP
       });
 
-// TRY CUSTOM marker
+			// TRY CUSTOM marker
 			const markerlayer = new google.maps.OverlayView();
 			markerlayer.draw = function(){
 			  this.getPanes().markerLayer.classList.add('mark-layer');
@@ -374,11 +376,11 @@ function startNearbyRs(){
     function geoError(err){
     	swal(errorCode[err.code],err.message);
     	$("#dropConfirmLocation").remove();
-			clearTimeout(showConfirmLokasi);
-			// console.log("errorCode[err.code]: "+errorCode[err.code]+", err.message: "+err.message);
+    	clearTimeout(showConfirmLokasi);
+    	// console.log("errorCode[err.code]: "+errorCode[err.code]+", err.message: "+err.message);
     }//END geoError()
 
-	  var errorCode = { 
+	  var errorCode = {
 	  	0:"unknown error",
 	    1:"Permission denied",
 	    2:"Position unavailable",
@@ -394,7 +396,7 @@ function startNearbyRs(){
     navigator.geolocation.getCurrentPosition(geoSukses,geoError,geoOptions);
   }
   else{
-  	swal("Info","Your Device or Browser Not Supported Geolocation Services");
+  	swal("Info","Your Device Not Support Geolocation Services");
   } //END if navigator geolocations
 }//END startNearbyRs
 
@@ -403,28 +405,30 @@ function getDistanceInMeter(point_a,point_b){
   var distance_in_meters = google.maps.geometry.spherical.computeDistanceBetween(point_a,point_b);
   return distance_in_meters; //* 0.000621371; // convert meters to miles
 }
-	
-// function detectBrowser(){
-//   var userAgent = navigator.userAgent.toLowerCase();
-//   if(/edge/i.test(userAgent)){
-//     return "edge"; // edge
-//   }else if(/rv:11/i.test(userAgent)){
-//     return "ie11"; // ie11
-//   }else if(/msie 10/i.test(userAgent)){
-//     return "ie10"; // ie10
-//   }else if(/opr/i.test(userAgent)){
-//     return "opera"; // opera
-//   }else if(/chrome/i.test(userAgent)){
-//     //return "chrome"; // chrome
-//     $("#dropConfirmLocation").css("justify-content","flex-end");
-// 		$("#dropConfirmLocation *").css("margin-top","0");
-//   }else if(/firefox/i.test(userAgent)){
-//     return "firefox"; // firefox
-//   }else if(!!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/)){
-//     return "safari"; // safari
-//   }
-//   return undefined;
-// }
+
+function detectBrowser(){
+  var userAgent = navigator.userAgent.toLowerCase();
+  if(/edge/i.test(userAgent)){
+    return "edge"; // edge
+  }else if(/rv:11/i.test(userAgent)){
+    return "ie11"; // ie11
+  }else if(/msie 10/i.test(userAgent)){
+    return "ie10"; // ie10
+  }else if(/opr/i.test(userAgent)){
+    return "opera"; // opera
+  }else if(/chrome/i.test(userAgent)){
+    //return "chrome"; // chrome
+    $("#dropConfirmLocation").css("justify-content","flex-end");
+    $("#dropConfirmLocation *").css("margin-top","0");
+    console.log("chrome");
+
+  }else if(/firefox/i.test(userAgent)){
+    return "firefox"; // firefox
+  }else if(!!navigator.userAgent.match(/Version\/[\d\.]+.*Safari/)){
+    return "safari"; // safari
+  }
+  return undefined;
+}
 
 $(function(){
 
