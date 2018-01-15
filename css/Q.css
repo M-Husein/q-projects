@@ -114,6 +114,7 @@ div.dropConfirm.show{
 }
 .navbar .navbar-nav .dropdown{
 	overflow:visible;
+	z-index:1;
 }
 .navbar .navbar-nav .dropdown-toggle{
 	text-decoration:none !important;
