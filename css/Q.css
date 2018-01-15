@@ -335,6 +335,10 @@ div.dropConfirm.show{
 	.flex-1-xs{
 		flex:1;
 	}
+	.flex-no-m{
+		-webkit-flex:none;
+		flex:none;
+	}
 	div.map-wrap,
 	.map-wrap .row > div{
 		padding:0 !important;
