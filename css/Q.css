@@ -143,7 +143,8 @@ div.dropConfirm.show{
 .navbar .navbar-nav .dropdown:hover:before,
 .navbar .navbar-nav .dropdown:focus:before,
 .navbar .navbar-nav .dropdown:active:before,
-.navbar .navbar-nav .dropdown.show:before{
+.navbar .navbar-nav .dropdown.show:before,
+.navbar .navbar-nav .dropdown.here:before{
 	left:0;
 	right:0;
 }
