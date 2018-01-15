@@ -49,6 +49,9 @@
 .form-control[readonly]{
 	background-color:#fff !important;
 }
+ul.list-btn > li{
+	padding:0.375rem 0.75rem;
+}
 @media(max-width:767px){
 	.pm-0{
 		padding:0 !important;
@@ -168,7 +171,7 @@
 
 <div class="container my-4 align-items-center center-mid"><!--  pm-0 -->
 	<div class="w-100">
-		<form class="w40p h-100 mx-auto card bg-light" id="Qs1"><!-- w40p  -->
+		<form class="w40p h-100 mx-auto card bg-light" id="Qs1"><!-- w40p d-none -->
 			<div class="card-header">Quotation Services</div>
 			<div class="card-body">
 				<div class="form-group">
@@ -613,66 +616,109 @@
 
 		</div><!-- /#Qs3 -->
 
-		<div id="Qs4" class="d-none">
-			<form class="w-50 mx-auto card text-white bg-secondary">
+		<div id="Qs4" class="d-none"><!--d-none-->
+			<form class="w-50 mx-auto card bg-secondary">
 				<!-- <div class="card-header">Quotation Services</div> -->
 				<div class="card-body">
-					<div class="form-group row">
-						<div class="col-sm-4">
-							<span class="btn btn-light btn-block">Branch</span>
+					<div class="form-group form-row">
+						<div class="col-sm-3">
+							<span class="btn btn-light btn-block text-left">Branch</span>
 						</div>
-						<div class="col-sm-8">
+						<div class="col-sm-9">
 							<input type="text" class="form-control" id="" value="KC Jakarta Pasar Minggu" readonly>
 						</div>
 					</div>
-					<div class="form-group row">
-						<div class="col-sm-4">
-							<span class="btn btn-light btn-block">Currency</span>
+					<div class="form-group form-row">
+						<div class="col-sm-3">
+							<span class="btn btn-light btn-block text-left">Currency</span>
 						</div>
-						<div class="col-sm-8">
+						<div class="col-sm-9">
 							<input type="text" class="form-control" id="" value="USD → IDR" readonly>
 						</div>
 					</div>
 					
-					<div class="form-group row">
-						<div class="col-sm-4">
-							<span class="btn btn-light btn-block">Amount</span>
+					<div class="form-group form-row">
+						<div class="col-sm-3">
+							<span class="btn btn-light btn-block text-left">Amount</span>
 						</div>
-						<div class="col-sm-8">
+						<div class="col-sm-9">
 							<input type="text" class="form-control" id="" value="USD 100,000.00" readonly>
 						</div>
 					</div>
-					<div class="form-group row">
-						<div class="col-sm-4">
-							<span class="btn btn-light btn-block">Quotation</span>
+					
+					<div class="form-group form-row">
+						<div class="col-sm-3">
+							<span class="btn btn-light btn-block text-left">Detail</span>
 						</div>
-						<div class="col-sm-8">
-							<input type="text" class="form-control" id="" value="IDR 13,350.00" readonly>
+						<div class="col-sm-9">
+							<div class="form-row">
+								<div class="col">
+									<ul class="list-group list-btn">
+										<li class="list-group-item font-weight-bold">Denom</li>
+										<li class="list-group-item">USD 100/1</li>
+										<li class="list-group-item">USD 100/2</li>
+										<li class="list-group-item">USD 100/3</li>
+										<li class="list-group-item">USD 50</li>
+										<li class="list-group-item">USD 20</li>
+										<li class="list-group-item">USD 10</li>
+									</ul>
+									<!--<div class="btn-group-vertical" role="group">
+										<span class="btn btn-light btn-block">Denom</span>
+										<span class="btn btn-light btn-block">USD 100/1</span>
+									</div>-->
+								</div>
+								<div class="col">
+									<ul class="list-group list-btn">
+										<li class="list-group-item font-weight-bold">Qty</li>
+										<li class="list-group-item">500</li>
+										<li class="list-group-item">350</li>
+										<li class="list-group-item">0</li>
+										<li class="list-group-item">250</li>
+										<li class="list-group-item">100</li>
+										<li class="list-group-item">50</li>
+									</ul>
+								</div>
+								<div class="col">
+									<ul class="list-group list-btn">
+										<li class="list-group-item font-weight-bold">Quotation</li>
+										<li class="list-group-item">IDR 13.350</li>
+										<li class="list-group-item">IDR 13.250</li>
+										<li class="list-group-item">-</li>
+										<li class="list-group-item">IDR 13.330</li>
+										<li class="list-group-item">IDR 13.330</li>
+										<li class="list-group-item">IDR 13.330</li>
+									</ul>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="form-group row">
-						<div class="col-sm-4">
-							<span class="btn btn-light btn-block">Date</span>
+					
+					<div class="form-group form-row">
+						<div class="col-sm-3">
+							<span class="btn btn-light btn-block text-left">Date</span>
 						</div>
-						<div class="col-sm-8">
-							<input type="text" class="form-control" id="" value="28th Dec 2017" readonly>
-						</div>
-					</div>
-					<div class="form-group row">
-						<div class="col-sm-4">
-							<span class="btn btn-light btn-block">Eq IDR</span>
-						</div>
-						<div class="col-sm-8">
-							<input type="text" class="form-control" id="" value="IDR 1,335,000,000.00" readonly>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="" value="2nd Jan 2018" readonly>
 						</div>
 					</div>
-					<div class="form-group row">
-						<div class="col-sm-4">
-							<span class="btn btn-light btn-block">Available</span>
+					<div class="form-group form-row">
+						<div class="col-sm-3">
+							<span class="btn btn-light btn-block text-left">Eq IDR</span>
 						</div>
-						<div class="col-sm-8">
-							<textarea class="form-control" rows="4" readonly>
+						<div class="col-sm-9">
+							<input type="text" class="form-control" id="" value="IDR 1,333,650,000.00" readonly>
+						</div>
+					</div>
+					<div class="form-group form-row">
+						<div class="col-sm-3">
+							<span class="btn btn-light btn-block text-left">Available</span>
+						</div>
+						<div class="col-sm-9">
+							<textarea class="form-control" rows="6" readonly>
 KC Jakarta Pasar Minggu
+Jl. Raya Ragunan No.39, RT.1/RW.2,
+Ps. Minggu, Kota Jakarta Selatan,
+Daerah Khusus Ibukota Jakarta 12540
 Ph. (021)-78839888
 							</textarea>
 						</div>
@@ -685,34 +731,104 @@ Ph. (021)-78839888
 			</form>
 		</div><!-- /#Qs4 -->
 
-		<div id="QsEnd" class="d-none">
+		<div class="w80p mx-auto d-none" id="QsEnd"><!--d-none-->
 			<div class="">
-				<div class="alert alert-light border-warning text-center"><h3 class="m-0"><strong>BOOKING CONFIRMATION FORM</strong></h3></div>
+				<div class="alert alert-light border-dark text-center text-dark">
+					<h3 class="m-0"><strong>BOOKING CONFIRMATION FORM</strong></h3>
+				</div>
 				<p class="lead">
 					Your  transaction  registration  has  been  received. Please bring  your  reference  number to the Branch Office you have chosen.
 				</p>
 				<dl class="row">
-					<dt class="col-sm-2">Amount</dt>
-					<dd class="col-sm-10">USD 100.000</dd>
+					<dt class="col-sm-3">Amount</dt>
+					<dd class="col-sm-9">: USD 100.000</dd>
 
-					<dt class="col-sm-2">Quotation</dt>
-					<dd class="col-sm-10">IDR 13.350</dd>
+					<dt class="col-sm-3">Denomination</dt>
+					<dd class="col-sm-9">
+						<table class="table table-sm table-bordered table-hover" width="100%" cellspacing="0" id="tbDenomination">
+							<thead>
+								<tr>
+									<th scope="col">Denom</th>
+									<th scope="col">Qty</th>
+									<th scope="col">Total</th>
+									<th scope="col">Quotation</th>
+									<th scope="col">Eq IDR</th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<td>100/1</td>
+									<td>500</td>
+									<td>50.000</td>
+									<td>13350</td>
+									<td>667.500.000</td>
+								</tr>
+								<tr>
+									<td>100/2</td>
+									<td>350</td>
+									<td>0</td>
+									<td>13320</td>
+									<td>466.200.000</td>
+								</tr>
+								<tr>
+									<td>100/3</td>
+									<td>0</td>
+									<td>-</td>
+									<td>0</td>
+									<td>-</td>
+								</tr>
+								<tr>
+									<td>50</td>
+									<td>250</td>
+									<td>12.500</td>
+									<td>13330</td>
+									<td>166.625.000</td>
+								</tr>
+								<tr>
+									<td>20</td>
+									<td>100</td>
+									<td>2.000</td>
+									<td>13330</td>
+									<td>26.660.000</td>
+								</tr>
+								<tr>
+									<td>10</td>
+									<td>50</td>
+									<td>500</td>
+									<td>13330</td>
+									<td>6.665.000</td>
+								</tr>
+								<tr>
+									<td></td>
+									<td></td>
+									<td>100.000</td>
+									<td></td>
+									<td>1.333.650.000</td>
+								</tr>
+							</tbody>
+						</table>
+					</dd>
 
-					<dt class="col-sm-2">Equivalent</dt>
-					<dd class="col-sm-10">IDR 1.335.000.000</dd>
+					<dt class="col-sm-3">Equivalent</dt>
+					<dd class="col-sm-9">: IDR 1.335.000.000</dd>
 
-					<dt class="col-sm-2 text-truncate">Transaction Time</dt>
-					<dd class="col-sm-10">28 December 2017 09.00</dd>
+					<dt class="col-sm-3 text-truncate">Transaction Time</dt>
+					<dd class="col-sm-9">: Jan 2<sup>nd</sup> 2018 09.00</dd>
 					
-					<dt class="col-sm-2">Expiry Time</dt>
-					<dd class="col-sm-10">28 December 2017 11.00</dd>
+					<dt class="col-sm-3">Expiry Time</dt>
+					<dd class="col-sm-9">: Jan 2<sup>nd</sup> 2018  11.00</dd>
 					
-					<dt class="col-sm-2">Reference Number</dt>
-					<dd class="col-sm-10">QC00515135</dd>
-					
-					<dt class="col-sm-2">Branch Office</dt>
-					<dd class="col-sm-10">KC Jakarta Pasar Minggu  (Phone: 021-78839888)</dd>
+					<dt class="col-sm-3">Reference Number</dt>
+					<dd class="col-sm-9">: QC00515135</dd>
+
+					<dt class="col-sm-3">Branch Office</dt>
+					<dd class="col-sm-9">: KC Jakarta Pasar Minggu  (Phone: 021-78839888)</dd>
 				</dl>
+				<p>
+					<pre><small>Note :*) This is not a valid transaction form
+      *) Terms and conditions apply
+					</small></pre>
+				</p>
 				<p class="lead">PT. Bank Rakyat Indonesia (Persero) Tbk.</p>
 				<div class="text-right">
 					<a href="#" class="btn btn-lg btn-warning" title="Download" download=""><i class="fa fa-download"></i> DOWNLOAD</a>
