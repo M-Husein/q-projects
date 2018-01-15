@@ -93,6 +93,41 @@ div.dropConfirm.show{
 	text-align:center;
 }
 
+.navbar .navbar-nav .nav-link{
+	display:inline-block;
+	vertical-align:middle;
+	-webkit-transform:perspective(1px) translateZ(0);
+	transform:perspective(1px) translateZ(0);
+	box-shadow:0 0 1px transparent;
+	position:relative;
+	overflow:hidden;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+	-webkit-font-smoothing:antialiased;
+	-moz-osx-font-smoothing:grayscale;
+}
+.navbar .navbar-nav .nav-link:before{
+	content:"";
+	position:absolute;
+	z-index:-1;
+	left:50%;
+	right:50%;
+	bottom:0;
+	background:#fd6a05;
+	height:4px;
+	-webkit-transition-property:left,right;
+	transition-property:left,right;
+	-webkit-transition-duration:0.3s;
+	transition-duration:0.3s;
+	-webkit-transition-timing-function:ease-out;
+	transition-timing-function:ease-out;
+}
+.navbar-light .navbar-nav .nav-link:hover:before,
+.navbar-light .navbar-nav .nav-link:focus:before,
+.navbar-light .navbar-nav .nav-link:active:before{
+	left:0;
+	right:0;
+}
+
 @-webkit-keyframes pulse-animation{
   0%{
     opacity:1;
@@ -129,6 +164,12 @@ div.dropConfirm.show{
 }
 
 @media(min-width:768px){
+	.w10p{
+		width:10%;
+	}
+	.w20p{
+		width:20%;
+	}
 	.w30p{
 		width:30%;
 	}
@@ -141,9 +182,48 @@ div.dropConfirm.show{
 	.w60p{
 		width:60%;
 	}
+	.w70p{
+		width:70%;
+	}
+	.w80p{
+		width:80%;
+	}
+	.w90p{
+		width:90%;
+	}
+	.w100p{
+		width:100%;
+	}
 }
 
 @media(max-width:767px){
+	.w10m{
+		width:10%;
+	}
+	.w20m{
+		width:20%;
+	}
+	.w30m{
+		width:30%;
+	}
+	.w40m{
+		width:40%;
+	}
+	.w50m{
+		width:50%;
+	}
+	.w60m{
+		width:60%;
+	}
+	.w70m{
+		width:70%;
+	}
+	.w80m{
+		width:80%;
+	}
+	.w90m{
+		width:90%;
+	}
 	.w100m{
 		width:100%;
 	}
