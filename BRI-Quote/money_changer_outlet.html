@@ -11,6 +11,8 @@
 <title>Money Changer Outlet</title>
 <link rel="stylesheet" href="css/bootstrap.css">
 <link rel="stylesheet" href="css/fa.css">
+<link rel="stylesheet" href="css/animate.css">
+<link rel="stylesheet" href="BRI-Quote/bri-quote.css">
 <link rel="stylesheet" href="css/Q.css">
 <style>
 .vmin35{
@@ -79,38 +81,42 @@
   <div class="modal-dialog" role="document">
     <form class="modal-content">
       <div class="modal-header">
-        <h5 class="modal-title">Converter rate</h5>
+        <h5 class="modal-title">Converter Rate</h5>
         <button type="button" class="close" data-dismiss="modal" aria-label="Close" title="Close"><span aria-hidden="true">&times;</span></button>
       </div>
       <div class="modal-body">
-      	<!-- <div class="px-3"> -->
-				  <div class="form-group form-row">
-				  	<div class="col-sm-3">
-					    <select class="custom-select">
-					    	<option value="USD" selected>USD</option>
-					    	<option value="USD">IDR</option>
-					    </select>
-				    </div>
-				    <div class="col-sm-9">
-				      <input type="text" class="form-control" id="fromCur">
-				    </div>
-				  </div>
-				  <div class="form-row">
-				  	<div class="col-sm-3">
-					    <select class="custom-select">
-					    	<option value="USD">USD</option>
-					    	<option value="USD" selected>IDR</option>
-					    </select>
-					  </div>
-				    <div class="col-sm-9">
-				      <input type="text" class="form-control" id="toCur">
-				    </div>
-				  </div>
-			  <!-- </div> -->
+        <div class="form-group form-row">
+          <div class="col-sm-3">
+            <select class="custom-select" id="selectFromCur">
+              <option value="USD" selected>USD</option>
+              <option value="AUD">AUD</option>
+              <option value="CHF">CHF</option>
+              <option value="EUR">EUR</option>
+            </select>
+          </div>
+          <div class="col-sm-9">
+            <input type="number" class="form-control" id="fromCur">
+          </div>
+        </div>
+        <div class="form-group text-center">
+          <span class="border border-dark rounded-circle p-2 bold">TO</span>
+        </div>
+        <div class="form-row">
+          <div class="col-sm-3">
+            <select class="custom-select">
+              <!-- <option value="USD">USD</option> -->
+              <option value="IDR" selected>IDR</option>
+            </select>
+          </div>
+          <div class="col-sm-9">
+            <input type="text" class="form-control bg-white" id="toCur" readonly>
+          </div>
+        </div>
       </div>
       <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-dismiss="modal">Cancel</button>
-        <button type="button" class="btn btn-warning">Calculate</button>
+        <button type="button" class="btn btn-outline-secondary" data-dismiss="modal" title="Close">Close</button>
+        <button type="reset" class="btn btn-secondary" onclick="$('#fromCur').focus();">Reset</button>
+        <button type="button" class="btn btn-warning" id="btnCalculateRate">Calculate</button>
       </div>
     </form>
   </div>
@@ -147,7 +153,7 @@
     </button>
     <div class="collapse navbar-collapse justify-content-start" id="nav2">
       <div class="navbar-nav">
-        <span class="nav-item dropdown here mr-4">
+        <span class="nav-item dropdown mr-sm-4 here">
           <span class="btn btn-link text-dark dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             Information
           </span>
@@ -156,8 +162,8 @@
             <a class="dropdown-item active" href="BRI-Quote/money_changer_outlet.html">Money Changer Outlet</a>
           </div>
         </span>
-        <a class="nav-item nav-link text-dark mr-4" href="BRI-Quote/quotation_services.html">Quotation Services</a>
-        <a class="nav-item nav-link text-dark mr-4" href="#modalConvertRate" data-toggle="modal">Converter rate</a>
+        <a class="nav-item nav-link text-dark mr-sm-4" href="BRI-Quote/quotation_services.html">Quotation Services</a>
+        <a class="nav-item nav-link text-dark mr-sm-4" href="#modalConvertRate" data-toggle="modal">Converter rate</a>
       </div>
     </div>
   </div>
@@ -173,7 +179,7 @@
 				<div class="card-body">
 					<button type="button" class="btn btn-primary btn-block mb-3"><i class="fa fa-phone"></i> Call Now</button>
 					<div><span class="border border-dark rounded-circle p-2">OR</span></div>
-					<button type="button" class="btn btn-primary btn-block mt-3" id="btnGetDirectionAlert"><i class="fa fa-map-marker"></i> Get Direction</button>
+					<button type="button" class="btn btn-primary btn-block mt-3" id="btnGetDirectionAlert"><i class="fa fa-map-marker"></i> Nearest Branch</button>
 				</div>
 			</div>
 		</div>
@@ -181,25 +187,27 @@
 </div>
 
 <nav class="nav bg-bri">
-	<div class="container d-flex flex-xs-column align-items-center justify-content-between py-2">
-		<div>
-			<a class="text-white vmin35" href="#">Syarat dan Ketentuan</a>
-			<span class="text-white vmin35 px-1">|</span>
-			<a class="text-white vmin35" href="#">Kebijakan Privasi dan Keamanan</a>
-		</div>
-		<div class="text-white vmin35">
-			Copyright @ 2018 Bank Rakyat Indonesia (Persero) Tbk.
-		</div>
-	</div>
+  <div class="container d-flex flex-xs-column align-items-center justify-content-between py-2">
+    <div>
+      <a class="text-white vmin35" href="#">Terms and Conditions</a>
+      <span class="text-white vmin35 px-1">|</span>
+      <a class="text-white vmin35" href="#">Privacy and Security Policy</a>
+    </div>
+    <div class="text-white vmin35">
+      Copyright @ 2018 Bank Rakyat Indonesia (Persero) Tbk.
+    </div>
+  </div>
 </nav>
 
 <script src="js/jquery-2.1.4.min.js"></script>
 <script src="js/popper.min.js"></script>
 <script src="js/bootstrap.js"></script>
+<script src="BRI-Quote/bri-quote.js"></script>
 <script src="js/sweetalert.min.js"></script>
+<script src="js/bootstrap-notify.js"></script>
 <script src="js/Q.js"></script>
 <script>
-var map,allCabang = [],userMark;
+var map,allCabang = [],userMark = [];
 var markerBRI = {
   url:ORIGIN+'img/bank_bri.png'
 };
@@ -207,24 +215,33 @@ var markerBRI = {
 function initMap(){
   map = new google.maps.Map(document.getElementById('Gmap'),{
     zoom:4,
-    center:{lat:-2.0473207,lng:118.2315622} // lat:-2.44565,lng:117.8888
+    center:{lat:-2.0473207,lng:118.2315622}
   });
   setMarkers(map);
 }
 
 var cabangBRI = [
-	{"cabang":"Menara BRI BSD","lat":-6.2953086,"lng":106.6654576,"alamat":"Jl. Pahlawan Seribu No.4, Lengkong Gudang, Serpong, Kota Tangerang Selatan, Banten 15310"},
-	{"cabang":"KCP Pamulang","lat":-6.3430053,"lng":106.7288923,"alamat":"Ruko Pamulang Permai 1 Blok SH 20 No.3, Kec. Pamulang,, Jl. Pamulang Raya, Pamulang Bar., Pamulang, Kota Tangerang Selatan, Banten 15417"},
-  {"cabang":"JKT KRAMAT","lat":-6.1877468,"lng":106.8388573,"alamat":"Jl. Kramat Raya No.138, RT.2/RW.9, Kenari, Senen, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10430"},
-  {"cabang":"JKT VETERAN","lat":-6.1684996,"lng":106.8251147,"alamat":"Jalan Veteran No.8, RT.5/RW.2, Gambir, RT.5/RW.2, Gambir, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10110"},
-  {"cabang":"JKT KREKOT","lat":-6.1614856,"lng":106.829902,"alamat":"Jl. Samanhudi No.127, RT.5/RW.8, Ps. Baru, Sawah Besar, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10710"},
-  {"cabang":"JKT SUDIRMAN 1","lat":-6.2181081,"lng":106.8117526,"alamat":"Menara taspen, Jl. Jend. Sudirman No.kav 2, RT.14/RW.1, Bend. Hilir, Tanah Abang, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10210"},
-  {"cabang":"JKT GN. SAHARI","lat":-6.1454316,"lng":106.8323111,"alamat":"Jl. Gn. Sahari No.18, RT.3/RW.1, Gn. Sahari Utara, Sawah Besar, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10720"}
+  {"cabang":"KANTOR CABANG KHUSUS","lat":-6.2143884,"lng":106.8066715,"Telp":"+62215709060","alamat":"Gedung BRI II Jl. Jend. Sudirman No. 44 - 46, Jakarta 10210"},
+  {"cabang":"MAL AMBASADOR","lat":-6.2242746,"lng":106.8249817,"Telp":"+62215763350","alamat":"Mall Ambasador Lt. UG No. 36 Jl Prof Dr Satrio, Kuningan, Jak Selatan"},
+	{"cabang":"JKT TNH ABANG","lat":-6.2242734,"lng":106.7921507,"Telp":"+62213454529","alamat":"Jl Tanah Abang III/4 Jakarta Pusat"},
+  {"cabang":"JKT GT SUBROTO","lat":-6.2242711,"lng":106.7921506,"Telp":"+62215204431","alamat":"Jl Gatot Subroto Kav. 52 jakarta Selatan"},
+  {"cabang":"BRI CORPORATE UNIVERSITY","lat":-6.3026755,"lng":106.8194954,"Telp":"+622178830368","alamat":"Jl. RM Harsono No. 2 RT.7/RW.7, Ragunan, Ps. Minggu, Jakarta Selatan"},
+  {"cabang":"JKT KEB. BARU","lat":-6.2430527,"lng":106.7670347,"Telp":"+62217201053","alamat":"Jl.Hasanuddin No.62 Blok M, Jakarta"},
+  {"cabang":"JKT SAHARJO","lat":-6.2390901,"lng":106.7984574,"Telp":"+62218314159","alamat":"Kompleks Ruko Royal Palace Blok B6-7, Jalan Professor Doktor Supomo No.178 A, RT.1/RW.15, Menteng Dalam, Tebet, Kota Jakarta Selatan, Daerah Khusus Ibukota Jakarta 12870"},
+
+  {"cabang":"Menara BRI BSD","lat":-6.2953086,"lng":106.6654576,"Telp":"+62212510244","alamat":"Jl. Pahlawan Seribu No.4, Lengkong Gudang, Serpong, Kota Tangerang Selatan, Banten 15310"},
+	{"cabang":"KCP Pamulang","lat":-6.3430053,"lng":106.7288923,"Telp":"+62217491181","alamat":"Ruko Pamulang Permai 1 Blok SH 20 No.3, Kec. Pamulang,, Jl. Pamulang Raya, Pamulang Bar., Pamulang, Kota Tangerang Selatan, Banten 15417"},
+  {"cabang":"JKT KRAMAT","lat":-6.1877468,"lng":106.8388573,"Telp":"+62213100152","alamat":"Jl. Kramat Raya No.138, RT.2/RW.9, Kenari, Senen, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10430"},
+  {"cabang":"JKT VETERAN","lat":-6.1684996,"lng":106.8251147,"Telp":"+62212311728","alamat":"Jalan Veteran No.8, RT.5/RW.2, Gambir, RT.5/RW.2, Gambir, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10110"},
+  {"cabang":"JKT KREKOT","lat":-6.1614856,"lng":106.829902,"Telp":"+62212314176","alamat":"Jl. Samanhudi No.127, RT.5/RW.8, Ps. Baru, Sawah Besar, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10710"},
+  {"cabang":"JKT SUDIRMAN 1","lat":-6.2181081,"lng":106.8117526,"Telp":"+622157933251","alamat":"Gedung Arthaloka, Jl Jend Sudirman Kav 7, Jakarta Pusat 10220"},
+  {"cabang":"JKT GN. SAHARI","lat":-6.1454316,"lng":106.8323111,"Telp":"+62216006272","alamat":"Jl. Gn. Sahari No.18, RT.3/RW.1, Gn. Sahari Utara, Sawah Besar, Kota Jakarta Pusat, Daerah Khusus Ibukota Jakarta 10720"},
+  {"cabang":"JKT RASUNA SAID","lat":-6.2382142,"lng":106.7959141,"Telp":"+622157942119","alamat":"Gd Wisma Bakrie 2, Lantai Dasar, Jl HR Rasuna Said, Kav b-2 Jak Selatan"}
 ];
 
 function setMarkers(map){
   var infow = new google.maps.InfoWindow({
-    maxWidth:200
+    maxWidth:250
   });
 
   for(var i=0; i < cabangBRI.length; i++){
@@ -240,7 +257,7 @@ function setMarkers(map){
     allCabang.push(marker);
 
     google.maps.event.addListener(marker,'click',(function(marker,i){
-    	var isi = '<p class=font-weight-bold>'+cabangBRI[i].cabang+'</p><address>'+cabangBRI[i].alamat+'</address>';
+    	var isi = '<p class="font-weight-bold">'+bri.cabang+'</p><address><p>'+bri.alamat+'</p><div class="input-group input-group-sm"><span class="input-group-addon cpoin copyTxt">Copy</span><input type="text" class="form-control bg-white toCopy" value="'+bri.Telp+'" readonly><span class="input-group-btn"><a href="tel:'+bri.Telp+'" class="btn btn-primary">Call</a></span></div></address>';
       return function(){
         infow.setContent(isi);
         infow.open(map,marker);
@@ -256,6 +273,12 @@ function setMapOnAll(map){
   }
 }
 
+function setUserMark(map){
+  for(var i=0; i < userMark.length; i++){
+    userMark[i].setMap(map);
+  }
+}
+
 // Search Cabang Terdekat Dr Lokasi User
 function startNearbyRs(){
   if(navigator.geolocation){
@@ -264,7 +287,6 @@ function startNearbyRs(){
     	$('<div class="modal-backdrop dropConfirm show" id="dropConfirmLocation"><h3>Please, Allow Your Location to use this feature</h3></div>').appendTo("body");
   	},150);
 
-    console.log(ww);
     if(ww <= 767){
     	detectBrowser();
     }
@@ -273,15 +295,18 @@ function startNearbyRs(){
     	$("#dropConfirmLocation").remove();
     	clearTimeout(showConfirmLokasi);
     	setMapOnAll(null);
+      allCabang = [];
+      setUserMark(null);
+      userMark = [];
 
       var pos = {
         lat:posisi.coords.latitude,
         lng:posisi.coords.longitude
       };
-     	userMark = new google.maps.Marker({
+     	var userPos = new google.maps.Marker({
         position:new google.maps.LatLng(pos.lat,pos.lng),
         map:map,
-        id:'user',
+        // id:'user',
 		    flat:!0,
 		    icon:{
           path:google.maps.SymbolPath.CIRCLE,
@@ -296,6 +321,8 @@ function startNearbyRs(){
         title:'Me',
         animation:google.maps.Animation.DROP
       });
+
+      userMark.push(userPos);
 
 			// TRY CUSTOM marker
 			const markerlayer = new google.maps.OverlayView();
@@ -321,11 +348,11 @@ function startNearbyRs(){
           });
 
 				  var infow = new google.maps.InfoWindow({
-				    maxWidth:200
+				    maxWidth:250
 				  });
 
 			    google.maps.event.addListener(marker,'click',(function(marker,i){
-			    	var isi = '<p class="font-weight-bold">'+cabangBRI[i].cabang+'</p><address>'+cabangBRI[i].alamat+'</address>';
+			    	var isi = '<p class="font-weight-bold">'+cabangBRI[i].cabang+'</p><address><p>'+cabangBRI[i].alamat+'</p><div class="input-group input-group-sm"><span class="input-group-addon cpoin copyTxt">Copy</span><input type="text" class="form-control bg-white toCopy" value="'+cabangBRI[i].Telp+'" readonly><span class="input-group-btn"><a href="tel:'+cabangBRI[i].Telp+'" class="btn btn-primary">Call</a></span></div></address>';
 			      return function(){
 			        infow.setContent(isi);
 			        infow.open(map,marker);
