@@ -16,3 +16,11 @@
   text-shadow:none;
 	padding:0;
 }
+
+@media(max-width:767px){
+	.navbar-nav div.dropdown-menu{
+		background:transparent;
+		border:0;
+		padding-top:0;
+	}
+}
