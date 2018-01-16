@@ -39,8 +39,12 @@ a.link-abu:hover{
 .txt-oren{
 	color:#fd6a05 !important;
 }
+.bold,
 *.btn:not(.btn-link){
 	font-weight:700;
+}
+.cpoin{
+	cursor:pointer !important;
 }
 .btn.btn-trans{
 	border-color:transparent !important;
@@ -149,6 +153,19 @@ div.dropConfirm.show{
 	right:0;
 }
 
+.collapse-full-head .card-header{
+	padding:0;
+}
+.collapse-full-head .card-header a{
+	color:#555;
+	padding:0.75rem 1.25rem;
+  display:block;
+	text-decoration:none !important;
+}
+.collapse-full-head .card-header a{
+	color:#333;
+}
+
 @-webkit-keyframes pulse-animation{
   0%{
     opacity:1;
@@ -247,6 +264,12 @@ div.dropConfirm.show{
 	}
 	.w100m{
 		width:100%;
+	}
+	.navbar .navbar-nav .nav-link,
+	.navbar .navbar-nav .dropdown,
+	.navbar .navbar-nav .dropdown-toggle{
+		display:block;
+		text-align:left;
 	}
 	.navbar#navMain{
 		z-index:1042;
