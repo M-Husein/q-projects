@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<base href="https://m-husein.github.io/q-projects/">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="description" content="Husein Q Try or Demo Web Application Develop By Muhamad Husein aka Q-think">
+<meta name="author" content="Muhamad Husein, Q-think">
+<meta name="theme-color" content="#e3f2fd">
+<link rel="icon" href="favicon.ico">
+<title>Q-TRY Uppy</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+<link rel="stylesheet" href="css/fa.css">
+<link rel="stylesheet" href="css/Q.css">
+<link href="https://transloadit.edgly.net/releases/uppy/v0.22.2/dist/uppy.min.css" rel="stylesheet">
+</head>
+<body>
+
+<div class="container">
+  <div class="UppyDragDrop"></div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://transloadit.edgly.net/releases/uppy/v0.22.2/dist/uppy.min.js"></script>
+<script>
+var uppy = Uppy.Core();
+uppy.use(Uppy.DragDrop,{target:'.UppyDragDrop'});
+uppy.use(Uppy.Tus,{endpoint:'//master.tus.io/files/'});
+uppy.run();
+</script>
+</body></html>
