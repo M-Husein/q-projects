@@ -45,11 +45,11 @@ $(function(){
   $(".button-collapse").sideNav({
     edge:'right',
     onOpen:function(el){
-      this.classList.add('buka');
-    },
-    onClose:function(el){
-      this.classList.remove('buka');
+      this.classList.toggle('buka');
     }
+//     onClose:function(el){
+//       this.classList.remove('buka');
+//     }
   });
 });
 </script>
