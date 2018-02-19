@@ -42,7 +42,15 @@
 <script src="js/materialize.js"></script>
 <script>
 $(function(){
-  $(".button-collapse").sideNav();
+  $(".button-collapse").sideNav({
+    edge:'right',
+    onOpen:function(el){
+      this.addClass('buka');
+    },
+    onClose:function(el){
+      this.removeClass('buka');
+    }
+  });
 });
 </script>
 </body></html>
