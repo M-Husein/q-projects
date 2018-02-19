@@ -46,12 +46,15 @@ $(function(){
     edge:'right',
     onOpen:function(el){
       //this.classList.toggle('buka');
-      $(".button-collapse").toggleClass('buka');
+      $(".drag-target").addClass('buka');
+    },
+    onClose:function(el){
+      // this.classList.remove('buka');
+      $(".drag-target").removeClass('buka');
     }
-//     onClose:function(el){
-//       this.classList.remove('buka');
-//     }
   });
+  
+  
 });
 </script>
 </body></html>
